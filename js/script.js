@@ -386,7 +386,7 @@ function showPopup() {
 
   // 5秒后跳转
   setTimeout(function() {
-    window.location.href = "http://2025.yuban.cf/";
+    window.location.href = "https://xiaoyuban1213.github.io/2025/";
     document.body.removeChild(overlay);
     document.body.removeChild(popup);
   }, 5000);
