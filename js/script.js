@@ -274,101 +274,69 @@ $(function()
 	
 });
 
-		var musicCurrentTime = 0;
-		var musicCurrentLine = 0;
+//  musicLyric 是预先定义好的LRC格式歌词字符串
+var musicLyric = "[00:00.000]牛奶咖啡 - 明天，你好\n[00:00.44]（合）跟着我 像双手触摸天空般跳起来\n[00:05.31]穿过夜空 徜徉星海\n[00:08.49]跟着我 为走过的路跳起来\n[00:12.29]驱散所有的阴霾\n[00:44.48]（漆柚）想把青空云海 摘下来\n[00:48.20]包装成一盒意外 用心装载\n[00:52.52]然后在 多年后拆开来\n[00:55.52]绽放出最绚烂的色彩\n[00:59.30]（凑诗）想把一路精彩 留下来\n[01:03.17]凝聚成一段节拍 用梦填满\n[01:07.56]然后在 这一刻唱出来\n[01:10.38]幸好聚光灯下你还在\n[01:14.29]（合）跟着我 像双手触摸天空般跳起来\n[01:18.87]穿过夜空 徜徉星海\n[01:22.23]跟着我 为走过的路跳起来\n[01:26.32]驱散所有的阴霾\n[01:29.64]跟着我 为付出的爱跳起来\n[01:33.74]别让期待中的乐章苍白\n[01:37.09]跟着我 为做过的梦跳起来\n[01:41.09]这里有我 期待的未来\n[01:44.78]（合）热爱无可取代\n[01:48.32]坚持无须摇摆\n[01:52.18]梦想无限澎湃\n[01:55.77]（合）这里是我最喜欢的舞台\n[02:13.05]（易言）把这一秒风采 停下来\n[02:16.73]提醒我过去曾在 未来会来\n[02:21.17]多慷慨 就会有多感慨\n[02:23.98]留在这青春无悔年代\n[02:27.85]（锦鲤姬）想把人影灯海 拍下来\n[02:31.36]留住这煌煌时代 一束光彩\n[02:35.90]多年后 期待你依然在\n[02:38.80]这一座星光熠熠的舞台\n[02:42.85]（合）跟着我 像双手触摸天空般跳起来\n[02:47.45]就当一切无法重来\n[02:50.63]跟着我 为走过的路跳起来\n[02:54.64]还有太多的期待\n[02:58.05]跟着我 为付出的爱跳起来\n[03:02.31]尽情付出不要害怕苍白\n[03:05.45]跟着我 为做过的梦跳起来\n[03:09.45]这里是我 最喜欢的舞台\n[03:13.45]（合）热爱无可取代\n[03:16.88]坚持无须摇摆\n[03:20.74]梦想无限澎湃\n[03:24.25]（合）这里有我期待的未来";
 
-		var musicLyric = "[00:00.44]（合）跟着我 像双手触摸天空般跳起来\n[00:05.31]穿过夜空 徜徉星海\n[00:08.49]跟着我 为走过的路跳起来\n[00:12.29]驱散所有的阴霾\n[00:44.48]（漆柚）想把青空云海 摘下来\n[00:48.20]包装成一盒意外 用心装载\n[00:52.52]然后在 多年后拆开来\n[00:55.52]绽放出最绚烂的色彩\n[00:59.30]（凑诗）想把一路精彩 留下来\n[01:03.17]凝聚成一段节拍 用梦填满\n[01:07.56]然后在 这一刻唱出来\n[01:10.38]幸好聚光灯下你还在\n[01:14.29]（合）跟着我 像双手触摸天空般跳起来\n[01:18.87]穿过夜空 徜徉星海\n[01:22.23]跟着我 为走过的路跳起来\n[01:26.32]驱散所有的阴霾\n[01:29.64]跟着我 为付出的爱跳起来\n[01:33.74]别让期待中的乐章苍白\n[01:37.09]跟着我 为做过的梦跳起来\n[01:41.09]这里有我 期待的未来\n[01:44.78]（合）热爱无可取代\n[01:48.32]坚持无须摇摆\n[01:52.18]梦想无限澎湃\n[01:55.77]（合）这里是我最喜欢的舞台\n[02:13.05]（易言）把这一秒风采 停下来\n[02:16.73]提醒我过去曾在 未来会来\n[02:21.17]多慷慨 就会有多感慨\n[02:23.98]留在这青春无悔年代\n[02:27.85]（锦鲤姬）想把人影灯海 拍下来\n[02:31.36]留住这煌煌时代 一束光彩\n[02:35.90]多年后 期待你依然在\n[02:38.80]这一座星光熠熠的舞台\n[02:42.85]（合）跟着我 像双手触摸天空般跳起来\n[02:47.45]就当一切无法重来\n[02:50.63]跟着我 为走过的路跳起来\n[02:54.64]还有太多的期待\n[02:58.05]跟着我 为付出的爱跳起来\n[03:02.31]尽情付出不要害怕苍白\n[03:05.45]跟着我 为做过的梦跳起来\n[03:09.45]这里是我 最喜欢的舞台\n[03:13.45]（合）热爱无可取代\n[03:16.88]坚持无须摇摆\n[03:20.74]梦想无限澎湃\n[03:24.25]（合）这里有我期待的未来";
-		var musicLyricLine = new Array();
-		musicLyricLine = musicLyric.split("\n");
-		var musicLyricContent = new Array();
-		for(var i = 0; i < musicLyricLine.length; i++)
-		{
-			var musicLyricTemp = new Array();
-			musicLyricTemp = musicLyricLine[i].split("]");
-			musicLyricTemp[0] = musicLyricTemp[0].substr(1, musicLyricTemp[0].length - 1);
-			var musicLyricTempMinute = musicLyricTemp[0].split(":")[0];
-			var musicLyricTempSecond = musicLyricTemp[0].split(":")[1].split(".")[0];
-			var musicLyricTempMillisecond = musicLyricTemp[0].split(":")[1].split(".")[1];
-			var musicLyricTempText = musicLyricTemp[1];
-			var musicLyricTempTimeline = parseInt(musicLyricTempMillisecond) + parseInt(musicLyricTempSecond) * 1000 + parseInt(musicLyricTempMinute) * 1000 * 60;
-			musicLyricContent[i] = new Array();
-			musicLyricContent[i][0] = musicLyricTempTimeline;
-			musicLyricContent[i][1] = musicLyricTempText;
-		}
 
-		var musicLyricId = document.getElementById("subtitle");
-		musicLyricId.innerHTML = "歌词载入ing";
-		var musicPlayerId = document.getElementById("audio");
-		musicPlayerId.onload=setInterval(
-			function()
-			{
-				musicCurrentTime = audio.currentTime * 1000;
-				//console.log(audio.currentTime * 1000);
-			}, 50);
-		musicPlayerId.onchange=function(){console.log(123)}
-		var musicOpacity = 1;
+// 将LRC歌词字符串转换为时间戳和文本的数组
+function parseLyrics(lyricsText) {
+  return lyricsText.split('\n').map(function (line) {
+    const match = line.match(/\[(\d{2}):(\d{2})\.(\d{2,3})\](.*)/);
+    if (!match) return null;
+    const mm = parseInt(match[1], 10);
+    const ss = parseInt(match[2], 10);
+    const ms = parseInt(match[3], 10); // 毫秒部分已经是整数，无需额外处理
+    const timestamp = mm * 60 * 1000 + ss * 1000 + ms;
+    return {
+      timestamp: timestamp,
+      text: match[4].trim()
+    };
+  }).filter(Boolean); // 过滤掉null值
+}
 
-		setTimeout(function(){musicShow()},10);
+var musicLyricContent = parseLyrics(musicLyric);
+var musicPlayer = document.getElementById('audio');
+var musicLyricDisplay = document.getElementById('subtitle');
+var currentLineIndex = 0;
 
-		function musicShow(){
-			var musicCurrentLineTemp = musicCurrentLine;
-			for(var i = 0; i < musicLyricContent.length; i++)
-			{
-				if(musicLyricContent[i][0] > musicCurrentTime)
-				{
-					musicCurrentLine = i - 1;
-					if(musicCurrentLine != musicCurrentLineTemp)musicOpacity = 0;
-					break;
-				}else if(i == musicLyricContent.length - 1)
-				{
-					musicCurrentLine = musicLyricContent.length - 1;
-				}
-			}
-			if(musicCurrentLine < 0)
-				musicLyricId.innerHTML = "歌词载入ing";
-			else
-				musicLyricId.innerHTML = musicLyricContent[musicCurrentLine][1];
-			musicLyricId.style.color = "#F9F4DC";
-			if(musicOpacity < 1){
-				musicOpacity += 0.01;
-				setTimeout(function(){musicShow()},10);
-			}else{
-				setTimeout(function(){musicHide()},800);
-			}
-		}
+// 更新歌词显示的函数
+function updateLyricDisplay() {
+currentLineIndex = 0;
+  const currentTime = Math.floor(musicPlayer.currentTime * 1000); // 取整到最近的毫秒
 
-		function musicHide(){
-			var musicCurrentLineTemp;
-			for(var i = 0; i < musicLyricContent.length; i++)
-			{
-				if(musicLyricContent[i][0] > musicCurrentTime)
-				{
-					musicCurrentLineTemp = i - 1;
-					if(musicCurrentLineTemp != musicCurrentLineTemp)musicOpacity = 0;
-					break;
-				}else if(i == musicLyricContent.length - 1)
-				{
-					musicCurrentLineTemp = musicLyricContent.length - 1;
-				}
-			}
-			if(musicCurrentLine != musicCurrentLineTemp)
-			{
-				setTimeout(function(){musicShow()},10);
-				return 0;
-			}
-			if(musicCurrentTime < parseInt(musicLyricContent[musicCurrentLine + 1][0])){
-				setTimeout(function(){musicHide()},10);
-				return 0;
-			}
-			musicLyricId.style.color = "rgba(0,0,0," + musicOpacity +")";
-			musicOpacity -= 0.018;
-			if(musicOpacity > 0){
-				setTimeout(function(){musicHide()},10);
-			}else{
-				musicShow();
-			}
-		};
-		
+  // 检查是否需要更新歌词行
+  while (currentLineIndex < musicLyricContent.length - 1 && 
+         musicLyricContent[currentLineIndex + 1].timestamp <= currentTime) {
+    currentLineIndex++;
+  }
+
+  // 更新歌词显示
+  musicLyricDisplay.textContent = musicLyricContent[currentLineIndex].text;
+
+  // 如果音乐未结束，继续递归更新歌词
+  if (!musicPlayer.ended) {
+    requestAnimationFrame(updateLyricDisplay);
+  } else {
+    // 音乐结束时重置歌词索引，准备下一次播放
+    currentLineIndex = 0;
+  }
+}
+
+// 音乐播放时绑定事件
+musicPlayer.addEventListener('play', function() {
+  currentLineIndex = 0; // 重置当前歌词行索引
+  updateLyricDisplay(); // 开始更新歌词
+});
+
+// 音乐播放结束时重置歌词
+musicPlayer.addEventListener('ended', function() {
+  musicPlayer.currentTime = 0; // 重置音乐播放时间
+});
+
+// 初始化歌词显示
+if (musicLyricContent.length > 0) {
+  musicLyricDisplay.textContent = musicLyricContent[0].text;
+}
 		
 // 设置结束时间的时间戳
 var endTime = new Date("2025/1/29 00:00:00").getTime();
